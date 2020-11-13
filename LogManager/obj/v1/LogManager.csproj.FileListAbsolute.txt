@@ -1,0 +1,10 @@
+D:\Desktop Programming\LogManager\LogManager\bin\v1\Log Manager.exe.config
+D:\Desktop Programming\LogManager\LogManager\bin\v1\Log Manager.exe
+D:\Desktop Programming\LogManager\LogManager\bin\v1\Guna.UI.dll
+D:\Desktop Programming\LogManager\LogManager\bin\v1\Guna.UI2.dll
+D:\Desktop Programming\LogManager\LogManager\obj\v1\LogManager.Form1.resources
+D:\Desktop Programming\LogManager\LogManager\obj\v1\LogManager.Notification.resources
+D:\Desktop Programming\LogManager\LogManager\obj\v1\LogManager.Properties.Resources.resources
+D:\Desktop Programming\LogManager\LogManager\obj\v1\LogManager.Warning.resources
+D:\Desktop Programming\LogManager\LogManager\obj\v1\LogManager.csproj.GenerateResource.Cache
+D:\Desktop Programming\LogManager\LogManager\obj\v1\Log Manager.exe

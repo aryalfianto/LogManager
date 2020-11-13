@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LogManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ftp_user" Type="System.String" Scope="User">
+      <Value Profile="(Default)">testlog</Value>
+    </Setting>
+    <Setting Name="ftp_password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">testlog1234</Value>
+    </Setting>
+    <Setting Name="ftp_directory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG/</Value>
+    </Setting>
+    <Setting Name="local_directory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Datalog_Manager</Value>
+    </Setting>
+    <Setting Name="local_testplan1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Agilent_ICT\log\testplan.txt</Value>
+    </Setting>
+    <Setting Name="local_testplan2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Agilent3070\log\testplan.txt</Value>
+    </Setting>
+    <Setting Name="date_parser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.201.192.20/AutoParser/SCH/ICT/GetServerDateTime.aspx?txtFFDB=FF2810_SCH</Value>
+    </Setting>
+    <Setting Name="extension" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.txt</Value>
+    </Setting>
+    <Setting Name="local_project" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Datalog_Project</Value>
+    </Setting>
+    <Setting Name="process_iwas" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NewAutoICTver</Value>
+    </Setting>
+    <Setting Name="iwas_version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">5.5.2</Value>
+    </Setting>
+    <Setting Name="testername1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Agilent_ICT\iWAS_Win\Knsu_aeh.ini</Value>
+    </Setting>
+    <Setting Name="testername2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Agilent3070\iWAS_Win\Knsu_aeh.ini</Value>
+    </Setting>
+    <Setting Name="SendSignal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG_Software/Signal_From_Software/</Value>
+    </Setting>
+    <Setting Name="yield1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Agilent_ICT\iWAS_Win\yield.txt</Value>
+    </Setting>
+    <Setting Name="yield2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Agilent3070\iWAS_Win\yield.txt</Value>
+    </Setting>
+    <Setting Name="listprojectNG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG_Software/List_Project_Not_Create_Test_Log/</Value>
+    </Setting>
+    <Setting Name="tester_signal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG_Software/Signal_From_Software/</Value>
+    </Setting>
+    <Setting Name="SendSignal2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG_Software/Signal_From_Software</Value>
+    </Setting>
+    <Setting Name="listprojectNT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG_Software/List_Project_Not_Txt_Format/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

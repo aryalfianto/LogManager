@@ -1,0 +1,20 @@
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Log Manager.exe.config
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Log Manager.exe.manifest
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Log Manager.application
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Log Manager.exe
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Log Manager.pdb
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Guna.UI.dll
+D:\Desktop Programming\LogManager\LogManager\bin\Release\Guna.UI2.dll
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.Form1.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.IWASnotif.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.Notification.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.Properties.Resources.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.Warning.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.csproj.GenerateResource.Cache
+D:\Desktop Programming\LogManager\LogManager\obj\Release\Log Manager.TrustInfo.xml
+D:\Desktop Programming\LogManager\LogManager\obj\Release\Log Manager.exe.manifest
+D:\Desktop Programming\LogManager\LogManager\obj\Release\Log Manager.application
+D:\Desktop Programming\LogManager\LogManager\obj\Release\Log Manager.exe
+D:\Desktop Programming\LogManager\LogManager\obj\Release\Log Manager.pdb
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.Tester_Location.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Release\LogManager.csprojResolveAssemblyReference.cache

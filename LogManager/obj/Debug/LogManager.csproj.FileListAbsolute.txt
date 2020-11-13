@@ -1,0 +1,18 @@
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Log Manager.exe.config
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Log Manager.exe
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Log Manager.pdb
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Guna.UI.dll
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Guna.UI2.dll
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\LogManager.Form1.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\LogManager.Properties.Resources.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\LogManager.csproj.GenerateResource.Cache
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\Log Manager.exe
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\Log Manager.pdb
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Log Manager.exe.manifest
+D:\Desktop Programming\LogManager\LogManager\bin\Debug\Log Manager.application
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\LogManager.IWASnotif.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\LogManager.Notification.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\LogManager.Warning.resources
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\Log Manager.TrustInfo.xml
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\Log Manager.exe.manifest
+D:\Desktop Programming\LogManager\LogManager\obj\Debug\Log Manager.application
