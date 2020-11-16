@@ -57,6 +57,15 @@ namespace LogManager
 
         private void gunaLabel5_TextChanged(object sender, EventArgs e)
         {
+            List<String> Mylocalfolder = Directory.GetFiles(Properties.Settings.Default.local_directory, "*", SearchOption.AllDirectories).ToList();
+            foreach(string list in Mylocalfolder)
+            {
+                FileInfo mFile = new FileInfo(list);
+                if(mFile.FullName.Contains(Properties.Settings.Default.extension)==false)
+                {
+                    File.Delete(list);
+                }
+            }
             tolerace = 0;
         }
 
@@ -385,7 +394,7 @@ namespace LogManager
                     else
                     {
                         tolerace++;
-                        if (tolerace == 2)
+                        if (tolerace == 3)
                         {
                             Warning Wr = new Warning();
                             Wr.Show();
