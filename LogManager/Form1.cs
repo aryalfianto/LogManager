@@ -413,25 +413,6 @@ namespace LogManager
             }
             string Data = "Station : " + gunaLabel1.Text + "\n\r" + "Total Test : " + gunaLabel2.Text + "\n\r" + "Project : " + gunaLabel5.Text + "\n\r" + "Date : " + DateTime.Now + "\n\r" + "Version : " + label1.Text + "\n\r" + "IP Computer : " + gunaLabel6.Text ;
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "Info.txt", Data);
-            //var requestx = (FtpWebRequest)WebRequest.Create(Properties.Settings.Default.SendSignal + gunaLabel1.Text + "/" + "Info.txt");
-            //requestx.Credentials = new NetworkCredential(Properties.Settings.Default.ftp_user, Properties.Settings.Default.ftp_password);
-            //requestx.Method = WebRequestMethods.Ftp.GetFileSize;
-            //try
-            //{
-            //    FtpWebResponse response = (FtpWebResponse)requestx.GetResponse();
-            //}
-            //catch (WebException ex)
-            //{
-            //    FtpWebResponse response = (FtpWebResponse)ex.Response;
-            //    if (response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
-            //    {
-            //        using (var client = new WebClient())
-            //        {
-            //            client.Credentials = new NetworkCredential(Properties.Settings.Default.ftp_user, Properties.Settings.Default.ftp_password);
-            //            client.UploadFile(Properties.Settings.Default.SendSignal + gunaLabel1.Text + "/" + "Info.txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + "Info.txt");
-            //        }
-            //    }
-            //}
         }
 
         private void button1_Click(object sender, EventArgs e)

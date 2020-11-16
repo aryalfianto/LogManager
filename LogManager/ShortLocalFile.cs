@@ -31,7 +31,7 @@ namespace LogManager
                     Directory.CreateDirectory(localproject + @"\" + testplan);
                     try
                     {
-                        int milliseconds = 500;
+                        int milliseconds = 1000;
                         Thread.Sleep(milliseconds);
                         File.Move(file, localproject + @"\" + testplan + @"\" + mFile.Name);
                     }
@@ -46,7 +46,7 @@ namespace LogManager
                     Directory.CreateDirectory(localproject + @"\" + testplan);
                     try
                     {
-                        int milliseconds = 500;
+                        int milliseconds = 1000;
                         Thread.Sleep(milliseconds);
                         File.Move(file, localproject + @"\" + testplan + @"\" + mFile.Name);
                     }

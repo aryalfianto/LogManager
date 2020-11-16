@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Log Manager.exe" size="265616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Log Manager.exe" size="269712">
       <assemblyIdentity name="Log Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>HynQebjCAJpu1efNV65S8UFcwgc=</dsig:DigestValue>
+        <dsig:DigestValue>SWVJLy6AgPh95PD4oxOFUJs/e1o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -87,13 +87,13 @@
       <dsig:DigestValue>4tVPjXSFikGYnz1MB/pRjY7kgZk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Log Manager.exe.config" size="3877">
+  <file name="Log Manager.exe.config" size="4054">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>8VpJjnuJ9TsZSserLgq+kEaFUbI=</dsig:DigestValue>
+      <dsig:DigestValue>dhofTgExlu8bfKY5hFEFNjnSt1U=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

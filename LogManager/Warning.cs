@@ -19,22 +19,35 @@ namespace LogManager
         }
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
+            
             if (guna2TextBox1.Text != "" & guna2TextBox2.Text != "")
             {
                 string badge = guna2TextBox1.Text.ToLower();
                 string password = guna2TextBox2.Text.ToLower();
-                if (badge == "b2020" && password == "b2020")
+                try
                 {
-                    gunaLabel2.Visible = false;
-                    this.Hide();
+                    using (WebClient client = new WebClient())
+                    {
+                        string login = client.DownloadString(Properties.Settings.Default.loginparser + badge + "&txtPassword=" + password);
+                        if(login.Contains("ERR"))
+                        {
+                            gunaLabel2.Text = "BadgeID atau Password Salah !";
+                            gunaLabel2.Visible = true;
+                            guna2TextBox1.Text = "";
+                            guna2TextBox2.Text = "";
+                            this.ActiveControl = guna2TextBox1;
+                        }
+                        if(login.Contains("OK"))
+                        {
+
+                            gunaLabel2.Visible = false;
+                            this.Close();
+                        }
+                    }
                 }
-                else
+                catch
                 {
-                    gunaLabel2.Text = "BadgeID atau Password Salah !";
-                    gunaLabel2.Visible = true;
-                    guna2TextBox1.Text = "";
-                    guna2TextBox2.Text = "";
-                    this.ActiveControl = guna2TextBox1;
+                    
                 }
             }
             else

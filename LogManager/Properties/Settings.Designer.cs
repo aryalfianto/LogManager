@@ -263,5 +263,17 @@ namespace LogManager.Properties {
                 this["listprojectNT"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://btmnt008/AutoParser/SCH/FCT/Login.aspx?txtBadgeNo=")]
+        public string loginparser {
+            get {
+                return ((string)(this["loginparser"]));
+            }
+            set {
+                this["loginparser"] = value;
+            }
+        }
     }
 }

@@ -1131,6 +1131,7 @@
             this.Name = "Tester_Location";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tester Monitoring";
+            this.Load += new System.EventHandler(this.Tester_Location_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

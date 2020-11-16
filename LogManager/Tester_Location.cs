@@ -183,11 +183,17 @@ namespace LogManager
                     }
                 }
             }
+            button1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Tester_Location_Load(object sender, EventArgs e)
+        {
+            button1.Visible = true;
         }
     }
 }
