@@ -275,5 +275,17 @@ namespace LogManager.Properties {
                 this["loginparser"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ftp://10.208.180.20/DataLOG_Software/Log_File_Sent/")]
+        public string log_sent {
+            get {
+                return ((string)(this["log_sent"]));
+            }
+            set {
+                this["log_sent"] = value;
+            }
+        }
     }
 }

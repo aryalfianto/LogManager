@@ -9,7 +9,6 @@ namespace LogManager
     public class ReadServerTime
     {
         public string parser { get; set; }
-
         public string DateServer()
         {
             string ServerTime;
@@ -30,7 +29,7 @@ namespace LogManager
 
         private string parsing(string RawDate)
         {
-            string [] pemisah = RawDate.Split(';');
+            string[] pemisah = RawDate.Split(';');
             string[] Date = pemisah[1].Split(' ');
             string[] Dates = Date[0].Split('/');
             string finaldate =  Dates[2] + "/" + Dates[0] + "/" + Dates[1];

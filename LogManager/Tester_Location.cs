@@ -168,7 +168,6 @@ namespace LogManager
                                 if (x.Name.Contains(directories[a]))
                                 {
                                     x.Text = "OK";
-                                    
                                 }
                                 else
                                 {

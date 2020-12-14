@@ -78,6 +78,7 @@ namespace LogManager
         {
             var serverdate = _serverTime.DateServer();
             var date = serverdate;
+            string extension = Properties.Settings.Default.extension;
             List<String> Mylocalfolder = Directory.GetFiles(localproject, "*", SearchOption.AllDirectories).ToList();
             foreach (string file in Mylocalfolder)
             {
@@ -138,6 +139,66 @@ namespace LogManager
                     }
                     notifyIcon1.BalloonTipText = (filename + " Sent To " + Folderproject + " !");
                     notifyIcon1.ShowBalloonTip(1000);
+
+                    FtpWebRequest requestx = (FtpWebRequest)FtpWebRequest.Create(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/");
+                    requestx.Credentials = new NetworkCredential(User, Password);
+                    requestx.Method = WebRequestMethods.Ftp.MakeDirectory;
+                    try
+                    {
+                        using (var resp = (FtpWebResponse)requestx.GetResponse())
+                        {
+                        }
+                    }
+                    catch
+                    {
+                        //
+                    }
+                    
+                    try
+                    {
+                        using (var client = new WebClient())
+                        {
+                            client.Credentials = new NetworkCredential(User, Password);
+                            client.DownloadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt", AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                        }
+
+                        FtpWebRequest requestv = (FtpWebRequest)FtpWebRequest.Create(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt");
+                        requestv.Credentials = new NetworkCredential(User, Password);
+                        requestv.Method = WebRequestMethods.Ftp.DeleteFile;
+                        FtpWebResponse responsev = (FtpWebResponse)requestv.GetResponse();
+                        responsev.Close();
+
+                        using (WebClient client = new WebClient())
+                        {
+                            string RawServerTime = client.DownloadString(Properties.Settings.Default.date_parser);
+                            string tempo = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                            string newtempo = RawServerTime + " " + filename + " Sent To " + Folderproject + "\n" + tempo;
+                            File.Delete(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt", newtempo);
+                        }
+                        using (var client = new WebClient())
+                        {
+                            client.Credentials = new NetworkCredential(User, Password);
+                            client.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                        }
+                        
+                    }
+                    catch
+                    {
+                        using (WebClient client = new WebClient())
+                        {
+                            string RawServerTime = client.DownloadString(Properties.Settings.Default.date_parser);
+                            string tempo = RawServerTime + " " + filename + " Sent To " + Folderproject;
+                            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt", tempo);
+                        }
+                        using (var client = new WebClient())
+                        {
+                            client.Credentials = new NetworkCredential(User, Password);
+                            client.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                        }
+                        //jika tidak ada langsungsuk kirim
+                    }
+
                 }
                 catch (WebException ex)
                 {
@@ -154,7 +215,6 @@ namespace LogManager
             }
             
         }
-
         /// <summary>
         /// Check Ftp server Active or Not
         /// </summary>

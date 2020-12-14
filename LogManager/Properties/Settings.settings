@@ -65,5 +65,8 @@
     <Setting Name="loginparser" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://btmnt008/AutoParser/SCH/FCT/Login.aspx?txtBadgeNo=</Value>
     </Setting>
+    <Setting Name="log_sent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ftp://10.208.180.20/DataLOG_Software/Log_File_Sent/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
