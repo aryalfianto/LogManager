@@ -1,0 +1,4 @@
+Date : 12/16/2020 11:43:46 AM|Tester : HP#50|Current Project : Tes22velop|Status : Close Application Ver 3.5
+Date : 12/16/2020 11:43:23 AM|Tester : HP#50|Current Project : Tes22velop|Status : ICT_hp_50.txt-->Tes22velop
+Date : 12/16/2020 11:43:06 AM|Tester : HP#50|Current Project : Tes22velop|Status : Start Application Ver 3.5
+Date : 12/16/2020 11:41:24 AM|Tester : HP#50|Current Project : Tes22velop|Status : zzs.txt-->Tes22velop

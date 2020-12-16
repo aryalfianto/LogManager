@@ -156,47 +156,55 @@ namespace LogManager
                     
                     try
                     {
-                        using (var client = new WebClient())
-                        {
-                            client.Credentials = new NetworkCredential(User, Password);
-                            client.DownloadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt", AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
-                        }
-
-                        FtpWebRequest requestv = (FtpWebRequest)FtpWebRequest.Create(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt");
-                        requestv.Credentials = new NetworkCredential(User, Password);
-                        requestv.Method = WebRequestMethods.Ftp.DeleteFile;
-                        FtpWebResponse responsev = (FtpWebResponse)requestv.GetResponse();
-                        responsev.Close();
 
                         using (WebClient client = new WebClient())
                         {
+                            
                             string RawServerTime = client.DownloadString(Properties.Settings.Default.date_parser);
-                            string tempo = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
-                            string newtempo = RawServerTime + " " + filename + " Sent To " + Folderproject + "\n" + tempo;
-                            File.Delete(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
-                            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt", newtempo);
-                        }
-                        using (var client = new WebClient())
-                        {
+                            string[] Detail = RawServerTime.Split(';');
+                            string[] Tester = gunaLabel1.Text.Split('_');
+                            string NamaTester = Tester[1] + "#" + Tester[2];
+                            string TesterName = NamaTester.ToUpper();
+                            string[] fileTester = TesterName.Split('#');
+
                             client.Credentials = new NetworkCredential(User, Password);
-                            client.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                            client.DownloadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt", AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                            FtpWebRequest requestv = (FtpWebRequest)FtpWebRequest.Create(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt");
+                            requestv.Credentials = new NetworkCredential(User, Password);
+                            requestv.Method = WebRequestMethods.Ftp.DeleteFile;
+                            FtpWebResponse responsev = (FtpWebResponse)requestv.GetResponse();
+                            responsev.Close();
+
+                            string tempo = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + fileTester[0]+fileTester[1] + ".txt");
+                            string newtempo = "Date : " + Detail[1] + "|Tester : " + TesterName + "|Current Project : " + gunaLabel5.Text + "|Status : " + filename + "-->" + Folderproject + "\n" + tempo;
+                            File.Delete(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt", newtempo);
+                            using (var clientz = new WebClient())
+                            {
+                                clientz.Credentials = new NetworkCredential(User, Password);
+                                clientz.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                            }
                         }
-                        
+
                     }
                     catch
                     {
                         using (WebClient client = new WebClient())
                         {
                             string RawServerTime = client.DownloadString(Properties.Settings.Default.date_parser);
-                            string tempo = RawServerTime + " " + filename + " Sent To " + Folderproject;
-                            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt", tempo);
+                            string  [] Detail = RawServerTime.Split(';');
+                            string  [] Tester = gunaLabel1.Text.Split('_');
+                            string NamaTester = Tester[1] + "#" + Tester[2];
+                            string TesterName = NamaTester.ToUpper();
+                            string[] fileTester = TesterName.Split('#');
+                            string tempo = "Date : " + Detail[1] + "|Tester : " + TesterName +"|Current Project : " + gunaLabel5.Text + "|Status : " + filename + "-->" + Folderproject;
+                            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt", tempo);
+                            using (var clientz = new WebClient())
+                            {
+                                clientz.Credentials = new NetworkCredential(User, Password);
+                                clientz.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                            }
                         }
-                        using (var client = new WebClient())
-                        {
-                            client.Credentials = new NetworkCredential(User, Password);
-                            client.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + gunaLabel1.Text + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
-                        }
-                        //jika tidak ada langsungsuk kirim
                     }
 
                 }
@@ -342,11 +350,84 @@ namespace LogManager
             }
 
         }
+        public void createlog(string Status)
+        {
+            var serverdate = _serverTime.DateServer();
+            string[] datez = serverdate.Split('/');
+            string User = Properties.Settings.Default.ftp_user;
+            string Password = Properties.Settings.Default.ftp_password;
+            
+            try
+            {
 
+                using (WebClient client = new WebClient())
+                {
+                    string RawServerTime = client.DownloadString(Properties.Settings.Default.date_parser);
+                    string[] Detail = RawServerTime.Split(';');
+                    string[] Tester = gunaLabel1.Text.Split('_');
+                    string NamaTester = Tester[1] + "#" + Tester[2];
+                    string TesterName = NamaTester.ToUpper();
+                    string[] fileTester = TesterName.Split('#');
+                    using (var clientx = new WebClient())
+                    {
+                        clientx.Credentials = new NetworkCredential(User, Password);
+                        clientx.DownloadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt", AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                    }
+
+                    FtpWebRequest requestv = (FtpWebRequest)FtpWebRequest.Create(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt");
+                    requestv.Credentials = new NetworkCredential(User, Password);
+                    requestv.Method = WebRequestMethods.Ftp.DeleteFile;
+                    FtpWebResponse responsev = (FtpWebResponse)requestv.GetResponse();
+                    responsev.Close();
+
+                    string tempo = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                    string newtempo = "Date : " + Detail[1] + "|Tester : " + TesterName + "|Current Project : " + gunaLabel5.Text + "|Status : " + Status + " Application " +label1.Text + "\n" + tempo;
+                    File.Delete(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                    File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt", newtempo);
+
+                    using (var clientc = new WebClient())
+                    {
+                        clientc.Credentials = new NetworkCredential(User, Password);
+                        clientc.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt");
+                    }
+                }
+
+            }
+            catch
+            {
+                using (WebClient client = new WebClient())
+                {
+                    
+                    string RawServerTime = client.DownloadString(Properties.Settings.Default.date_parser);
+                    string[] Detail = RawServerTime.Split(';');
+                    string[] Tester = gunaLabel1.Text.Split('_');
+                    string NamaTester = Tester[1] + "#" + Tester[2];
+                    string TesterName = NamaTester.ToUpper();
+                    string[] fileTester = TesterName.Split('#');
+                    string tempo = "Date : " + Detail[1] + "|Tester : " + TesterName + "|Current Project : " + gunaLabel5.Text + "|Status : " + Status + " Application " + label1.Text;
+                    File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + fileTester[0] + fileTester[1] + ".txt", tempo);
+                    using (var clientc = new WebClient())
+                    {
+                        clientc.Credentials = new NetworkCredential(User, Password);
+                        clientc.UploadFile(Properties.Settings.Default.log_sent + datez[0] + "/" + datez[1] + "/" + fileTester[0] + fileTester[1] + ".txt", WebRequestMethods.Ftp.UploadFile, AppDomain.CurrentDomain.BaseDirectory + gunaLabel1.Text + ".txt");
+                    }
+                }
+                
+                //jika tidak ada langsungsuk kirim
+            }
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             gunaLabel1.Text = Tester();
+            gunaLabel5.Text = _readTestplan.Project();
             gunaLabel6.Text = GetLocalIPAddress();
+            createlog("Start");
+
+        }
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            createlog("Close");
         }
         public static string GetLocalIPAddress()
         {
@@ -494,5 +575,6 @@ namespace LogManager
         {
             timer = 0;
         }
+
     }
 }

@@ -1,6 +1,6 @@
 Station : ICT_hp_50
-Total Test : 111
+Total Test : 101
 Project : Tes22velop
-Date : 12/14/2020 2:26:16 PM
-Version : Ver 3.0
+Date : 12/16/2020 11:43:46 AM
+Version : Ver 3.5
 IP Computer : 10.201.193.197

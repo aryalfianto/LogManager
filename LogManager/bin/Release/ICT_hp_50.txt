@@ -1,3 +1,1 @@
-OK;12/14/2020 2:24:30 PM xxxxxxxxxxxxxxxxxxxxxxx.txt Sent To Tes22velop
-OK;12/14/2020 2:22:27 PM ICT_hp_50.txt Sent To Tes22velop
-OK;12/14/2020 2:19:21 PM test4.txt Sent To Tes22velop
+Date : 12/16/2020 11:41:04 AM|Tester : HP#50|Current Project : Tes22velop|Status : Start Application Ver 3.5
